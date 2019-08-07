@@ -1,0 +1,17 @@
+{
+  "name": "unsta-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/LucasL94/unsta-backend.git",
+  "author": "Lucas Laroz <lucaslaroz@hotmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "node ./index"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^18.3.1",
+    "@hapi/joi": "^15.0.3",
+    "@hapi/nes": "^11.2.0"
+  }
+}
