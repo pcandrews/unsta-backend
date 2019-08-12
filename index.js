@@ -1,4 +1,9 @@
 const hapi = require('@hapi/hapi');
+const Inert = require('@hapi/inert');
+const Vision = require('@hapi/vision');
+const HapiSwagger = require('hapi-swagger');
+const mongoose = require('mongoose');
+const mongo = require('./config/mongo');
 
 (async () => {
   const wsserver = new hapi.server({
@@ -42,6 +47,32 @@ const hapi = require('@hapi/hapi');
         prefix: '/api'
       }
     })
+
+    const swaggerOptions = {
+      info: {
+        title: 'Notifications API Documentation',
+        version: "1.0.0",
+      },
+    }
+
+    await server.register([
+      Inert,
+      Vision,
+      {
+        plugin: HapiSwagger,
+        options: swaggerOptions
+      }
+    ]);
+
+    // MongoDB Connection
+    try{
+      await mongoose
+        .connect(mongo.configuration.getUri(process.env.NODE_ENV), {useNewUrlParser: true})
+      console.log('MongoDB Connected...')
+    } catch(err) {
+      console.log(err)
+    }
+
     server.start()
   } catch (err) {
     console.log(err)
