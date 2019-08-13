@@ -29,6 +29,7 @@ exports.postNotifications = async (req, h) => {
 
 exports.postScheduledNotifications = async (req, h) => {
   try {
+    const notifications = new Notifications(req.payload)
     schedule.scheduleJob(req.payload.schedule, () => {
       console.log(`Scheduling at ${req.payload.schedule}`)
       notiEvents.emit('SEND_NOTIFICATION', req.params.tag, {
@@ -36,11 +37,8 @@ exports.postScheduledNotifications = async (req, h) => {
         description: req.payload.description
       })
     })
-    return {
-      message: 'Notification scheduled',
-      title: req.payload.title,
-      description: req.payload.description
-    }
+    const result = await notifications.save()
+    return h.response(result).code(201)
   } catch (err) {
     throw boom.boomify(err, { statusCode: 400 })
   }
