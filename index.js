@@ -40,7 +40,8 @@ const mongo = require('./config/mongo');
 
     // Web Server
     await server.register([
-      require('./plugins/notifications/index')
+      require('./plugins/notifications/index'),
+      require('./plugins/users/index')
     ],
     {
       routes: {
@@ -53,6 +54,7 @@ const mongo = require('./config/mongo');
         title: 'Notifications API Documentation',
         version: "1.0.0",
       },
+      grouping: 'tags'
     }
 
     await server.register([
