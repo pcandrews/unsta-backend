@@ -1,0 +1,11 @@
+const Users = require('./models/users.model')
+const boom = require('@hapi/boom')
+
+exports.getUsers = async (req, h) => {
+  try{
+    const users = await Users.find()
+    return h.response(users)
+  } catch(err) {
+    throw boom.boomify(err, { statusCode: 400 })
+  }
+}

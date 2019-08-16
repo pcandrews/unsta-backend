@@ -2,11 +2,11 @@ const Joi = require('@hapi/joi')
 
 exports.getNotifications = {
   description: 'Get all Notifications',
-  tags: ['api'],
+  tags: ['api','notifications'],
   notes: ['Get all notifications from DB'],
   plugins: {
     'hapi-swagger': {
-      responses:{
+      responses: {
         200: {
           description: 'Successfully Found',
           schema: Joi.object({
@@ -14,7 +14,7 @@ exports.getNotifications = {
             description: Joi.string(),
             schedule: Joi.string(),
             important: Joi.string()
-          }).label('Result')
+          }).label('GetNoti')
         },
         400: {
           description: 'Something went wrong'
@@ -26,7 +26,7 @@ exports.getNotifications = {
 
 exports.postNotifications = {
   description: 'Post a regular notification',
-  tags: ['api'],
+  tags: ['api','notifications'],
   notes: ['Sends a regular notification'],
   plugins: {
     'hapi-swagger': {
@@ -37,7 +37,7 @@ exports.postNotifications = {
             title: Joi.string(),
             description: Joi.string(),
             important: Joi.boolean()
-          }).label('Result')
+          }).label('PostNoti')
         },
         400: {
           description: 'Something went wrong'
@@ -62,7 +62,7 @@ exports.postNotifications = {
 
 exports.postScheduledNotifications = {
   description: 'Post a scheduled notification',
-  tags: ['api'],
+  tags: ['api','notifications'],
   notes: ['Sends a scheduled notification'],
   plugins: {
     'hapi-swagger': {
@@ -73,7 +73,7 @@ exports.postScheduledNotifications = {
             title: Joi.string(),
             description: Joi.string(),
             important: Joi.boolean()
-          }).label('Result')
+          }).label('PostScheduleNoti')
         },
         400: {
           description: 'Something went wrong'
