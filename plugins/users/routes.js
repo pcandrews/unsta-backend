@@ -7,5 +7,11 @@ module.exports = [
     path: '/users',
     handler:  handler.getUsers,
     config: documentation.getUsers
+  },
+  {
+    method: 'POST',
+    path: '/users',
+    handler: handler.postUsers,
+    config: documentation.postUser
   }
 ]

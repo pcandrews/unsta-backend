@@ -14,7 +14,7 @@ exports.getUsers = {
             alumnCode: Joi.string().required(),
             career: Joi.string().required(),
             degree: Joi.string().required(),
-            hierachy: Joi.string().required()
+            hierarchy: Joi.string().required()
           }).label('GetUsers')
         },
         400: {
@@ -39,7 +39,7 @@ exports.postUser = {
             alumnCode: Joi.string().required(),
             career: Joi.string().required(),
             degree: Joi.string().required(),
-            hierachy: Joi.string().required()
+            hierarchy: Joi.string().required()
           }).label('PostUser')
         },
         400: {
@@ -54,7 +54,7 @@ exports.postUser = {
       alumnCode: Joi.string().required(),
       career: Joi.string().required(),
       degree: Joi.string().required(),
-      hierachy: Joi.string().required()
+      hierarchy: Joi.string().required()
     }
   }
 }
