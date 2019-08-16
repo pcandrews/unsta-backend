@@ -2,7 +2,7 @@ const Joi = require('@hapi/joi')
 
 exports.getNotifications = {
   description: 'Get all Notifications',
-  tags: ['api','notifications'],
+  tags: ['api', 'notifications'],
   notes: ['Get all notifications from DB'],
   plugins: {
     'hapi-swagger': {
@@ -26,7 +26,7 @@ exports.getNotifications = {
 
 exports.postNotifications = {
   description: 'Post a regular notification',
-  tags: ['api','notifications'],
+  tags: ['api', 'notifications'],
   notes: ['Sends a regular notification'],
   plugins: {
     'hapi-swagger': {
@@ -62,7 +62,7 @@ exports.postNotifications = {
 
 exports.postScheduledNotifications = {
   description: 'Post a scheduled notification',
-  tags: ['api','notifications'],
+  tags: ['api', 'notifications'],
   notes: ['Sends a scheduled notification'],
   plugins: {
     'hapi-swagger': {

@@ -2,7 +2,7 @@ const Joi = require('@hapi/joi')
 
 exports.getUsers = {
   description: 'Get all users',
-  tags: ['api','users'],
+  tags: ['api', 'users'],
   notes: ['This get all users from DB'],
   plugins: {
     'hapi-swagger': {
@@ -27,7 +27,7 @@ exports.getUsers = {
 
 exports.postUser = {
   description: 'Post a user',
-  tags: ['api','users'],
+  tags: ['api', 'users'],
   notes: ['Saves users data'],
   plugins: {
     'hapi-swagger': {

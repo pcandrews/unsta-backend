@@ -62,7 +62,7 @@ const mongo = require('./config/mongo');
       Vision,
       {
         plugin: HapiSwagger,
-        options: swaggerOptions,
+        options: swaggerOptions
       }
     ]);
 
