@@ -31,7 +31,6 @@ exports.postScheduledNotifications = async (req, h) => {
   try {
     const notifications = new Notifications(req.payload)
     schedule.scheduleJob(req.payload.schedule, () => {
-      console.log(`Scheduling at ${req.payload.schedule}`)
       notiEvents.emit('SEND_NOTIFICATION', req.params.tag, {
         title: req.payload.title,
         description: req.payload.description

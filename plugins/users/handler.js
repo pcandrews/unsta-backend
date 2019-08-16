@@ -16,7 +16,6 @@ exports.postUsers = async (req, h) => {
     const result = await users.save()
     return h.response(result).code(201)
   } catch(err) {
-    console.log(err)
     throw boom.boomify(err, { statusCode: 400 })
   }
 }
