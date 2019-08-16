@@ -5,6 +5,7 @@
       "ecmaFeatures": {}
   },
   "rules": {
+      "block-scoped-var": 1,
       "no-console": 1,
       "constructor-super": 2,
       "no-class-assign": 2,
@@ -32,6 +33,7 @@
       "no-invalid-regexp": 2,
       "no-irregular-whitespace": 2,
       "no-mixed-spaces-and-tabs": 2,
+      "no-multi-spaces": 2,
       "no-trailing-spaces": 2,
       "no-tabs": 2,
       "no-new-symbol": 2,

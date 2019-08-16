@@ -4,6 +4,7 @@ const Vision = require('@hapi/vision');
 const HapiSwagger = require('hapi-swagger');
 const mongoose = require('mongoose');
 const mongo = require('./config/mongo');
+/* eslint-disable no-console */
 
 (async () => {
   const wsserver = new hapi.server({
