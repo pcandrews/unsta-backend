@@ -1,6 +1,55 @@
-# unsta-backend
+# Unsta Back-End
 
-In order to use this repository, you will need to install the following things:
+UNSTA Communications app Back-End services
 
-• Node.Js 10.15 or more
-• MongoDB
+## Getting Started
+
+These instructions will get you ready to start working on the project on your local machine for development and testing purposes
+
+### Prerequisites
+
+You will need to have the following things installed to start working:
+
+```
+Node.Js version 10.15 or more
+MongoDB
+Yarn
+```
+
+### Installing
+
+First, you should run:
+
+```
+Yarn install
+```
+
+Then:
+
+```
+Yarn start
+```
+
+And voilá!
+
+## Running the tests
+
+No tests yet, still developing them
+
+### And coding style tests
+
+To check that your code has the correct work style, you should run this:
+
+```
+Yarn lint
+```
+
+## Deployment
+
+No deployments steps yet.
+
+## Authors
+
+* **Cristo, Pablo**
+* **Laroz, Lucas**
+* **Robra, Santiago**
