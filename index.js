@@ -68,11 +68,11 @@ const mongo = require('./config/mongo');
     ]);
 
     // MongoDB Connection
-    try{
+    try {
       await mongoose
         .connect(mongo.configuration.getUri(process.env.NODE_ENV), {useNewUrlParser: true})
       console.log('MongoDB Connected...')
-    } catch(err) {
+    } catch (err) {
       console.log(err)
     }
 

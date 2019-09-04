@@ -4,10 +4,20 @@ const notiEvents = require('../events/notiEvents')
 const schedule = require('node-schedule')
 
 exports.getNotifications = async (req, h) => {
-  try{
+  try {
     const notifications = await Notifications.find()
     return h.response(notifications)
-  } catch(err) {
+  } catch (err) {
+    throw boom.boomify(err, { statusCode: 400 })
+  }
+}
+
+exports.getNotificationsByTag = async (req, h) => {
+  try {
+    const tag = req.payload.tag
+    const notifications = await Notifications.find(tag)
+    return h.response(notifications)
+  } catch (err) {
     throw boom.boomify(err, { statusCode: 400 })
   }
 }
@@ -15,11 +25,11 @@ exports.getNotifications = async (req, h) => {
 exports.postNotifications = async (req, h) => {
   try {
     const notifications = new Notifications(req.payload)
-    setTimeout(() => {
-      notiEvents.emit('SEND_NOTIFICATION', req.params.tag, {
-        title: req.payload.title
-      })
-    }, req.query.delay)
+    notifications.tag = req.params.tag
+    notiEvents.emit('SEND_NOTIFICATION', req.params.tag, {
+      title: req.payload.title,
+      description: req.payload.description
+    })
     const result = await notifications.save()
     return h.response(result).code(201)
   } catch (err) {

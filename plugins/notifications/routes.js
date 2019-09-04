@@ -9,6 +9,12 @@ module.exports = [
     config: documentation.getNotifications
   },
   {
+    method: 'GET',
+    path: '/notifications/{tag}',
+    handler: handler.getNotifications,
+    config: documentation.getNotificationsByTag
+  },
+  {
     method: 'POST',
     path: '/notifications/{tag}',
     handler: handler.postNotifications,
