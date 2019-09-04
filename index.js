@@ -16,7 +16,7 @@ const mongo = require('./config/mongo');
   })
 
   try {
-    // WS server
+    // Web Socket server
     await wsserver.register({
       plugin: require('@hapi/nes'),
       options: {
