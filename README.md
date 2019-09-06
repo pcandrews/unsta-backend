@@ -1,5 +1,9 @@
 # Unsta Back-End
 
+![](https://github.com/LucasL94/unsta-backend/workflows/Node%20CI/badge.svg)
+
+
+
 UNSTA Communications app Back-End services
 
 ## Getting Started
